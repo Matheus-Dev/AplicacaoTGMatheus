@@ -1,0 +1,14 @@
+<!-- Generated template for the SearchAnimalComponent component -->
+<ion-item>
+  <ion-label stacked>Selecione o Animal: </ion-label>
+</ion-item>
+<ion-searchbar [(ngModel)]="filtroAnimal" (ionInput)="getAnimais($event)" ></ion-searchbar>
+<ion-list>
+  <ion-item *ngFor="let animal of animaisFiltrado" (click) = "selecionarAnimal(animal)">
+      {{ animal.nome }}
+  </ion-item>
+  <ion-item>
+      <ion-label stacked>Animal Selecionado: {{animalSelecionado.nome}}</ion-label>
+  </ion-item>
+</ion-list>
+

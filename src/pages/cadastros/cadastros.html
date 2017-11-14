@@ -1,0 +1,70 @@
+<!--
+  Generated template for the CadastrosPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Cadastros</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  <!--
+  <ion-list padding >
+    <button ion-button full *ngFor="let c of cadastros" (click)="criarNovoCadastro(c)">
+      {{c.title}}
+    </button>
+  </ion-list>
+  -->
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+          <div class = "div-estilo">
+              <ion-icon [name]="cadastros[0].name" (click) = "criarNovoCadastro(cadastros[0].component)"></ion-icon>
+              <ion-label>{{cadastros[0].title}}</ion-label>
+          </div>
+      </ion-col>
+      <ion-col>
+          <div class = "div-estilo">
+              <ion-icon [name]="cadastros[1].name" (click) = "criarNovoCadastro(cadastros[1].component)"></ion-icon>
+              <ion-label>{{cadastros[1].title}}</ion-label>
+          </div>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+        <ion-col>
+            <div class = "div-estilo">
+                <ion-icon [name]="cadastros[2].name" (click) = "criarNovoCadastro(cadastros[2].component)"></ion-icon>
+                <ion-label>{{cadastros[2].title}}</ion-label>
+            </div>
+        </ion-col>
+        <ion-col>
+            <div class = "div-estilo">
+                <ion-icon [name]="cadastros[3].name" (click) = "criarNovoCadastro(cadastros[3].component)"></ion-icon>
+                <ion-label>{{cadastros[3].title}}</ion-label>
+            </div>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+          <ion-col>
+              <div class = "div-estilo">
+                  <ion-icon [name]="cadastros[4].name" (click) = "criarNovoCadastro(cadastros[4].component)"></ion-icon>
+                  <ion-label>{{cadastros[4].title}}</ion-label>
+              </div>
+          </ion-col>
+          <ion-col>
+              <div class = "div-estilo">
+                  <ion-icon [name]="cadastros[5].name" (click) = "criarNovoCadastro(cadastros[5].component)"></ion-icon>
+                  <ion-label>{{cadastros[5].title}}</ion-label>
+              </div>
+          </ion-col>
+        </ion-row>
+  </ion-grid>
+  
+</ion-content>

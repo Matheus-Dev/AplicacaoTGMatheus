@@ -1,0 +1,73 @@
+<!--
+  Generated template for the AnimalPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Animal</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+    <ion-list>
+
+        <ion-item>
+            <ion-label stacked>Codigo:</ion-label>
+            <ion-input type="text"></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label stacked>Nome:</ion-label>
+            <ion-input type="text"></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label stacked>Data Nascimento:</ion-label>
+            <ion-datetime displayFormat="DD/MM/YYYY" pickerFormat="DD/MM/YYYY"></ion-datetime> 
+        </ion-item>
+
+        <ion-item>
+            <ion-label stacked>Raça:</ion-label>
+            <ion-input type="text"></ion-input>
+        </ion-item>
+
+        <ion-list radio-group [(ngModel)]="sexoAnimal">  
+            <ion-list-header>
+                Sexo:
+            </ion-list-header>
+    
+            <ion-item>
+                <ion-label>Macho</ion-label>
+                <ion-radio value="M"></ion-radio>
+            </ion-item>
+    
+            <ion-item>
+                <ion-label>Femea</ion-label>
+                <ion-radio value="F"></ion-radio>
+            </ion-item>
+    
+        </ion-list>
+        
+        <search-proprietario></search-proprietario>
+        <search-veterinario></search-veterinario>
+
+        <ion-grid>
+            <ion-row>
+              <ion-col col-6>
+                  <button ion-button block >Salvar</button>
+              </ion-col>
+              <ion-col col-6>
+                  <button ion-button block >Cancelar</button>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+
+    </ion-list>
+
+</ion-content>

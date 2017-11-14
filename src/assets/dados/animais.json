@@ -1,0 +1,25 @@
+[{
+    "id": "1",
+    "nome": "Cavalo Tenso",
+    "proprietarios": {
+      "id": "2",
+      "nome": "Jô Abidu" 
+    },
+    "veterinario": {
+      "id": "3",
+      "nome": "Maluco do Casebre" 
+    }
+  },
+  {
+    "id": "2",
+    "nome": "Pé de Pano",
+    "proprietarios": {
+      "id": "1",
+      "nome": "Demacol" 
+    },
+    "veterinario": {
+      "id": "1",
+      "nome": "James Matarazzo" 
+    }
+  }
+]

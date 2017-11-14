@@ -1,0 +1,91 @@
+<!--
+  Generated template for the FuncionarioPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Colaborador</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+    <ion-list>
+
+          <ion-item>
+            <ion-label stacked>Nome:</ion-label>
+            <ion-input type="text"></ion-input>
+          </ion-item>
+    
+          <ion-item>
+            <ion-label stacked>CPF: </ion-label>
+            <ion-input type="tel"></ion-input>
+          </ion-item>
+
+          <ion-item>
+              <ion-label stacked>Telefone: </ion-label>
+              <ion-input type="tel" [(ngModel)]="phoneNumber" [textMask]="{mask: masks.phoneNumber}"></ion-input>
+          </ion-item>
+
+          <ion-item>
+              <ion-label stacked>Login: </ion-label>
+              <ion-input type="text"></ion-input>
+          </ion-item>
+
+          <ion-item>
+              <ion-label stacked>Senha: </ion-label>
+              <ion-input type="password"></ion-input>
+          </ion-item>
+
+          <ion-item>
+              <ion-label stacked>Confirme a Senha: </ion-label>
+              <ion-input type="password"></ion-input>
+          </ion-item>
+
+          <ion-list>
+              <ion-item>
+                <ion-label stacked>Endereço</ion-label>
+              </ion-item>
+                <ion-item>
+                  <ion-label stacked>Rua: </ion-label>
+                  <ion-input type="text"></ion-input>
+                </ion-item>
+                <ion-item>  
+                  <ion-label stacked>Bairro: </ion-label>
+                  <ion-input type="text"></ion-input>
+                </ion-item>
+                <ion-item>
+                  <ion-label stacked>Cidade: </ion-label>
+                  <ion-input type="text"></ion-input>
+                </ion-item>
+                <ion-item>
+                    <ion-label stacked>Cep: </ion-label>
+                    <ion-input type="tel" [(ngModel)]="cep" [textMask]="{mask: masks.cep}"></ion-input>
+                  </ion-item>
+                <ion-item>
+                  <ion-label stacked>Estado: </ion-label>
+                  <ion-select [(ngModel)]="siglaEstado">
+                    <ion-option ion-item *ngFor="let sg of estados">{{sg.sigla}}</ion-option>
+                    </ion-select>
+                  </ion-item>
+          </ion-list>
+
+        </ion-list>
+
+        <ion-grid>
+          <ion-row>
+            <ion-col col-6>
+                <button ion-button block >Salvar</button>
+            </ion-col>
+            <ion-col col-6>
+                <button ion-button block >Cancelar</button>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+
+</ion-content>

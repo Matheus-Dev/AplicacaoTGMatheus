@@ -1,0 +1,19 @@
+<!-- Generated template for the SearchVeterinarioComponent component -->
+<ion-item>
+  <ion-label stacked>Selecione o Veterinário: </ion-label>
+</ion-item>
+<ion-searchbar [(ngModel)]="filtroVeterinario" (ionInput)="getVeterinarios($event)" ></ion-searchbar>
+<ion-list>
+  <ion-item *ngFor="let veterinario of veterinariosFiltrado" (click) = "selecionarVeterinario(veterinario)">
+      {{ veterinario.nome }}
+  </ion-item>
+  <ion-list>
+      <ion-item>
+          <ion-label stacked>Veterinário Selecionado:</ion-label>
+      </ion-item>
+      <ion-item>
+          <ion-label stacked>{{veterinarioSelecionado.nome}}</ion-label>
+      </ion-item>
+  </ion-list>
+</ion-list>
+
