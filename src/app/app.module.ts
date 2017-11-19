@@ -1,10 +1,11 @@
-import { SearchVeterinarioComponent } from './../components/search-veterinario/search-veterinario';
-import { SearchAnimalComponent } from './../components/search-animal/search-animal';
+import { ImageSelectViewComponent } from './../components/image-select-view/image-select-view';
+import { InfoAnimalComponent } from './../components/info-animal/info-animal';
 import { HttpClientModule  } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
-import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
+import { IonicApp, IonicErrorHandler, IonicModule, LoadingController } from 'ionic-angular';
+import { Base64 } from '@ionic-native/base64';
 
 import { TextMaskModule } from 'angular2-text-mask';
 
@@ -36,7 +37,15 @@ import { SearchProprietarioComponent } from '../components/search-proprietario/s
 import { VeterinariosProvider } from '../providers/veterinarios/veterinarios';
 import { AnimaisProvider } from '../providers/animais/animais';
 import { EnderecoProvider } from '../providers/endereco/endereco';
+import { ListAnimaisPage } from './../pages/list-animais/list-animais';
+import { SearchVeterinarioComponent } from './../components/search-veterinario/search-veterinario';
+import { SearchAnimalComponent } from './../components/search-animal/search-animal';
 
+import { ImagePicker } from '@ionic-native/image-picker';
+import { ImageResizer} from '@ionic-native/image-resizer';
+import { Camera} from '@ionic-native/camera';
+import { ImageSeletorConverterProvider } from '../providers/image-seletor-converter/image-seletor-converter';
+import { LoginProvider } from '../providers/login/login';
 
 @NgModule({
   declarations: [
@@ -59,9 +68,12 @@ import { EnderecoProvider } from '../providers/endereco/endereco';
     ProprietarioPage,
     RemedioPage,
     AlimentoPage,
+    ListAnimaisPage,
     SearchProprietarioComponent,
     SearchAnimalComponent,
-    SearchVeterinarioComponent
+    SearchVeterinarioComponent,
+    InfoAnimalComponent,
+    ImageSelectViewComponent
   ],
   imports: [
     BrowserModule,
@@ -90,7 +102,8 @@ import { EnderecoProvider } from '../providers/endereco/endereco';
     VeterinarioPage,
     ProprietarioPage,
     RemedioPage,
-    AlimentoPage
+    AlimentoPage,
+    ListAnimaisPage
   ],
   providers: [
     StatusBar,
@@ -99,7 +112,14 @@ import { EnderecoProvider } from '../providers/endereco/endereco';
     ProprietariosProvider,
     VeterinariosProvider,
     AnimaisProvider,
-    EnderecoProvider
+    EnderecoProvider,
+    Base64,
+    ImagePicker,
+    ImageResizer,
+    Camera,
+    LoadingController,
+    ImageSeletorConverterProvider,
+    LoginProvider 
   ]
 })
 export class AppModule {}

@@ -1,8 +1,6 @@
-import { ProprietariosProvider } from './../../providers/proprietarios/proprietarios';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
-import { VeterinariosProvider } from './../../providers/veterinarios/veterinarios';
 import { Animal } from './../../models/animal';
 import { AnimaisProvider } from '../../providers/animais/animais';
 
@@ -25,7 +23,7 @@ export class AnimalPage {
   constructor(public navCtrl: NavController, public navParams: NavParams, 
               public animalProvider: AnimaisProvider) {
             
-      this.animal = this.animalProvider.inicializarAnimal();
+      this.animal = new Animal();
     
   }
 
@@ -34,6 +32,18 @@ export class AnimalPage {
   }
 
   checkFocus (){
+  }
+
+  novaImagem(imagem){
+    this.animal.image = imagem;
+  }
+
+  salvarAnimal(){
+    
+  }
+
+  cancelar(){
+    this.navCtrl.pop();
   }
 
 }

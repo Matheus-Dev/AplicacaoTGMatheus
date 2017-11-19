@@ -15,6 +15,9 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class VacinaPage {
 
+  vacina: string = '';
+  vacinas: Array<{tipo : string}> = [];
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 

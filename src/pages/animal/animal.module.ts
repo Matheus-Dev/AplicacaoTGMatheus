@@ -1,3 +1,5 @@
+import { ImageSeletorConverterProvider } from './../../providers/image-seletor-converter/image-seletor-converter';
+import { ImageSelectViewComponent } from './../../components/image-select-view/image-select-view';
 import { NgModule } from '@angular/core';
 import { IonicPageModule } from 'ionic-angular';
 import { AnimalPage } from './animal';
@@ -12,14 +14,16 @@ import { SearchVeterinarioComponent } from './../../components/search-veterinari
   declarations: [
     AnimalPage,
     SearchProprietarioComponent,
-    SearchVeterinarioComponent
+    SearchVeterinarioComponent,
+    ImageSelectViewComponent
   ],
   imports: [
     IonicPageModule.forChild(AnimalPage),
   ],
   providers:[
     ProprietariosProvider,
-    VeterinariosProvider
+    VeterinariosProvider,
+    ImageSeletorConverterProvider
   ]
 })
 export class AnimalPageModule {}

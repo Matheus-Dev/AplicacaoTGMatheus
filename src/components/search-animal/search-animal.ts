@@ -22,13 +22,21 @@ export class SearchAnimalComponent {
 
   constructor(public animalService: AnimaisProvider) {
     this.getAnimaisService();
-    this.animalSelecionado = this.animalService.inicializarAnimal();
+    this.animalSelecionado = new Animal();
+  }
+
+  ionViewWillEnter(){
+    
   }
 
   getAnimaisService() {
     this.animalService.getAnimais()
     .then(data => {
+      alert(data);
       this.animais = data;
+    })
+    .catch(e => {
+      alert(e);
     });
   }
 

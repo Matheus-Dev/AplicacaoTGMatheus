@@ -1,3 +1,4 @@
+import { LoginProvider } from './../../providers/login/login';
 import { Component} from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
@@ -17,15 +18,37 @@ import { HomePage } from '../home/home';
 })
 export class LoginPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  message : any;
+  colaboradorLogado : any = {};
+
+  constructor(public navCtrl: NavController, public navParams: NavParams,
+              public loginProvider: LoginProvider) {
+  }
+
+  verificarDisponibilidadeAPI(){
+    this.loginProvider.verificarDisponibilidadeAPI()
+    .then(data => {
+      this.message = data;
+      alert("Tela Login"+this.message.title);
+    })
+    .catch(e =>{
+      alert(e);
+    });
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad LoginPage');
+  }
+
+  ionViewWillEnter(){
+    this.verificarDisponibilidadeAPI();
   }
 
   goPageHome() {
-    this.navCtrl.setRoot(HomePage);
+    this.colaboradorLogado.nome = 'Matheus Augusto';
+    this.navCtrl.setRoot(HomePage, {
+      colaboradorLogado : this.colaboradorLogado
+    });
+    //this.navParams.get('this.colaboradorLogado');
   }
 
   openPage(page) {

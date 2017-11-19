@@ -1,8 +1,9 @@
+import { ListAnimaisPage } from './../list-animais/list-animais';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 import { VeterinarioPage } from '../veterinario/veterinario';
-import { AnimalPage } from '../animal/animal';
+//import { AnimalPage } from '../animal/animal';
 import { FuncionarioPage } from './../funcionario/funcionario';
 import { ProprietarioPage } from './../proprietario/proprietario';
 import { AlimentoPage } from './../alimento/alimento';
@@ -35,7 +36,7 @@ export class CadastrosPage {
   listCadastros() : Array<{title: string, component: any, name : string}>{
     return [
       { title: 'Colaborador', component: FuncionarioPage, name: 'contacts' },
-      { title: 'Animais', component: AnimalPage, name: 'paw' },
+      { title: 'Animais', component: ListAnimaisPage, name: 'paw' },
       { title: 'Veterinário', component: VeterinarioPage, name: 'briefcase' },
       { title: 'Proprietário', component: ProprietarioPage, name: 'person' },
       { title: 'Alimento', component: AlimentoPage, name: 'nutrition' },

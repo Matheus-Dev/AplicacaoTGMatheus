@@ -22,7 +22,7 @@ export class SearchVeterinarioComponent {
 
   constructor(public veterinarioService : VeterinariosProvider) {
     this.getVeterinariosService();
-    this.veterinarioSelecionado = this.veterinarioService.inicializarVeterinario();
+    this.veterinarioSelecionado = new Veterinario();
   }
 
   getVeterinariosService() {

@@ -2,7 +2,7 @@ import { VeterinariosProvider } from './../veterinarios/veterinarios';
 import { ProprietariosProvider } from './../proprietarios/proprietarios';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Animal } from '../../models/animal';
+//import { Animal } from '../../models/animal';
 
 /*
   Generated class for the AnimaisProvider provider.
@@ -13,26 +13,22 @@ import { Animal } from '../../models/animal';
 @Injectable()
 export class AnimaisProvider {
 
+  urlAPI : string = 'http://192.168.0.108:3000/animal';
+
+  //'assets/dados/animais.json'
+
   constructor(public httpClient: HttpClient,
               public veterinarioProvider: VeterinariosProvider,
               public proprietarioProvider: ProprietariosProvider) {
               console.log('Hello AnimaisProvider Provider');
   }
-
-  inicializarAnimal () : Animal{
-    return {
-      id: '',
-      nome: '',
-      proprietario: this.proprietarioProvider.inicializarProprietario(),
-      veterinario: this.veterinarioProvider.inicializarVeterinario()
-    }
-  }
   
   getAnimais(){
     return new Promise(resolve => {
-      this.httpClient.get('assets/dados/animais.json').subscribe(data => {
+      this.httpClient.get(this.urlAPI).subscribe(data => {
         resolve(data);
       }, err => {
+        alert('Provider'+err);
         console.log(err);
       });
     });

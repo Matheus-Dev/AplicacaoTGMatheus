@@ -1,7 +1,13 @@
 import { Endereco } from "./endereco";
 
-export interface Veterinario {
+export class Veterinario {
     id: string;
     nome: string;
     endereco: Endereco;
+
+    constructor(){
+        this.id = '';
+        this.nome = '';
+        this.endereco = new Endereco();
+    }
 }

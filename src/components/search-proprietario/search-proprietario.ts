@@ -23,7 +23,7 @@ export class SearchProprietarioComponent {
 
   constructor(public proprietarioService: ProprietariosProvider) {
     this.getProprietariosService();
-    this.proprietarioSelecionado = this.proprietarioService.inicializarProprietario();
+    this.proprietarioSelecionado = new Proprietario();
   }
 
   getProprietariosService() {

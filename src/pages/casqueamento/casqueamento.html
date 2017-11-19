@@ -14,48 +14,33 @@
 
 
 <ion-content padding>
+  <ion-list>
+    <search-animal></search-animal>
+    
     <ion-list>
-        <ion-item>
-          <ion-label stacked>Selecione o Animal: </ion-label>
-        </ion-item>
-        <ion-searchbar [(ngModel)]="filtroAnimal" (ionInput)="getItems($event)"></ion-searchbar>
-        <ion-list>
-          <ion-item *ngFor="let ani of animaisFiltrado" (click)="selecionarAnimal(ani)">
-            {{ani.nome}}
-          </ion-item>
-        </ion-list>
-        <ion-list>
-          <ion-item>
-            <ion-label stacked>Animal Selecionado:</ion-label>
-          </ion-item>
-          <ion-item>  
-            <div>
-              <p>{{animalSelecionado.nome}}</p>
-            </div>
-          </ion-item>
-          <ion-item>
-            <ion-label stacked>Tipo de Ferradura: </ion-label>
-            <ion-select [(ngModel)]="tipoFerradura">
-              <ion-option ion-item *ngFor="let tp of tiposFerradura">{{tp.nome}}</ion-option>
-            </ion-select>
-          </ion-item>
-          <ion-item>
-              <ion-label stacked>Observações: </ion-label>
-              <ion-textarea type="text"></ion-textarea>
-          </ion-item>
-        </ion-list>
-
-        <ion-grid>
-          <ion-row>
-            <ion-col col-6>
-                <button ion-button block >Salvar</button>
-            </ion-col>
-            <ion-col col-6>
-                <button ion-button block >Cancelar</button>
-            </ion-col>
-          </ion-row>
-        </ion-grid>
-
+      <ion-item>
+        <ion-label stacked>Tipo de Ferradura: </ion-label>
+        <ion-select [(ngModel)]="tipoFerradura">
+          <ion-option ion-item *ngFor="let tp of tiposFerradura">{{tp.nome}}</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+          <ion-label stacked>Observações: </ion-label>
+          <ion-textarea type="text"></ion-textarea>
+      </ion-item>
     </ion-list>
+
+    <ion-grid>
+      <ion-row>
+        <ion-col col-6>
+            <button ion-button block >Salvar</button>
+        </ion-col>
+        <ion-col col-6>
+            <button ion-button block >Cancelar</button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+  </ion-list>
 
 </ion-content>

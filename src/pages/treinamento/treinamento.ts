@@ -1,3 +1,4 @@
+import { AnimaisProvider } from './../../providers/animais/animais';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
@@ -15,17 +16,20 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class TreinamentoPage {
 
-  animais: Array<{nome : string}>;
+  animais: any;
   animalSelecionado : {nome : string};
   filtroAnimal : string = '';
-  animaisFiltrado : Array<{nome : string}>;
-  treinamento : {inicio: string, termino : string};
+  animaisFiltrado : any;
+  treinamento : {inicio: string, termino : string, tipo: string};
+  treinamentos: Array<{treinamento}> = [];
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,
+              public animaisProvider: AnimaisProvider) {
+                
       this.animais = this.inicializarListaAnimais();
       this.animaisFiltrado = [];
       this.animalSelecionado = {nome : ''};
-      this.treinamento = {inicio: '', termino : ''}; 
+      this.treinamento = {inicio: '', termino : '', tipo : ''}; 
   }
 
   ionViewDidLoad() {

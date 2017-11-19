@@ -1,25 +1,31 @@
-[{
+[
+  {
     "id": "1",
     "nome": "Cavalo Tenso",
-    "proprietarios": {
-      "id": "2",
-      "nome": "Jô Abidu" 
+    "image": "assets/imgs/cavalo_padrao.jpg",
+    "proprietario": {
+        "id": "2",
+        "nome": "Jô Abidu",
+        "endereco" : {
+          "endereco": "",
+          "bairro": "",
+          "cidade": "",
+          "uf": "",
+          "cep": "",
+          "numero": ""	
+        } 
     },
     "veterinario": {
-      "id": "3",
-      "nome": "Maluco do Casebre" 
-    }
-  },
-  {
-    "id": "2",
-    "nome": "Pé de Pano",
-    "proprietarios": {
-      "id": "1",
-      "nome": "Demacol" 
-    },
-    "veterinario": {
-      "id": "1",
-      "nome": "James Matarazzo" 
+        "id": "3",
+        "nome": "Maluco do Casebre",
+        "endereco" : {
+          "endereco": "",
+          "bairro": "",
+          "cidade": "",
+          "uf": "",
+          "cep": "",
+          "numero": ""	
+        }
     }
   }
 ]

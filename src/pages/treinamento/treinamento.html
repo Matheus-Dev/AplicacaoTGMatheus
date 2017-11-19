@@ -19,6 +19,13 @@
       <search-animal></search-animal>
       
       <ion-item>
+        <ion-label stacked>Tipo de treinamento: </ion-label>
+        <ion-select [(ngModel)]="treinamento.tipo">
+          <ion-option ion-item *ngFor="let tp of treinamentos">{{tp.tipo}}</ion-option>
+          </ion-select>
+      </ion-item>
+      
+      <ion-item>
         <ion-label stacked>Inicio:</ion-label>
         <ion-datetime displayFormat="HH:mm" pickerFormat="HH:mm" [(ngModel)]="treinamento.inicio"></ion-datetime>
       </ion-item>
