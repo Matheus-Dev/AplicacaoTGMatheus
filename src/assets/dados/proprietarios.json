@@ -1,9 +1,25 @@
-[{
-    "id": "1",
-    "nome": "Jailson"
-  },
-  {
-    "id": "2",
-    "nome": "Paulo Guina"
-  }
+[
+    {
+        "_id": "5a11787d3336a81be477393b",
+        "nome": "Paulo Guina",
+        "cpf": "433982858-05",
+        "telefone": "3145-2604",
+        "haras": {
+            "_id": "5a117711bf2d190fd4567b4f",
+            "codigo": "00001",
+            "nomeFantasia": "Haras do Cavalo Bravo",
+            "proprietario": {
+                "nome": "Paulo Guina"
+            }
+        },
+        "__v": 0,
+        "endereco": {
+            "endereco": "Rua Lorena",
+            "bairro": "Vila Romana",
+            "cidade": "Cruzeiro",
+            "uf": "SP",
+            "cep": "12722-040",
+            "numero": "131"
+        }
+    }
 ]

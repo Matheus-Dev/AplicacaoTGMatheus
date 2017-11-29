@@ -20,7 +20,7 @@ export class LoginProvider {
       this.http.get(this.urlTeste+'/').subscribe(data => {
         resolve(data);
       }, err => {
-        alert("Tela Provider"+err);
+        //alert("Tela Provider"+err);
       });
     });
   }

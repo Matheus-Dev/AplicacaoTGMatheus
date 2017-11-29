@@ -7,11 +7,21 @@ import { NavController, NavParams } from 'ionic-angular';
 })
 export class HomePage {
 
-  usuarioLogado: any = {};
+  usuarioLogado: any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-    this.usuarioLogado = navParams.get('colaboradorLogado');
+     this.verificarUsuarioLogado();
     //alert(navParams.get('colaboradorLogado').nome);
+  }
+
+  verificarUsuarioLogado(){
+    if(this.navParams.get('colaboradorLogado') != null){
+      this.usuarioLogado = this.navParams.get('colaboradorLogado');
+    }else{
+      this.usuarioLogado = {
+        nome:'Usuario'
+      }
+    }
   }
 
 }

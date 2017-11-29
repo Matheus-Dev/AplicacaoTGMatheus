@@ -16,12 +16,12 @@
 <ion-content padding>
 
     <ion-list>
-      <search-animal></search-animal>
+      <search-animal (emissorAnimal)="recuperarAnimal($event)"></search-animal>
       
       <ion-item>
         <ion-label stacked>Tipo de treinamento: </ion-label>
         <ion-select [(ngModel)]="treinamento.tipo">
-          <ion-option ion-item *ngFor="let tp of treinamentos">{{tp.tipo}}</ion-option>
+          <ion-option ion-item *ngFor="let tp of treinamentos">{{tp}}</ion-option>
           </ion-select>
       </ion-item>
       
@@ -43,7 +43,7 @@
       <ion-grid>
         <ion-row>
           <ion-col col-6>
-              <button ion-button block >Salvar</button>
+              <button ion-button block (click)="mostrarDados()" >Salvar</button>
           </ion-col>
           <ion-col col-6>
               <button ion-button block >Cancelar</button>

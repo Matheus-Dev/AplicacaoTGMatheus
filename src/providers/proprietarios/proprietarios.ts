@@ -1,8 +1,4 @@
-import { EnderecoProvider } from './../endereco/endereco';
-import { Proprietario } from './../../models/proprietario';
-//import { Proprietario } from '../../models/proprietario';
 import { HttpClient } from '@angular/common/http';
-//import {Http, Response} from '@angular/http'
 import { Injectable } from '@angular/core';
 
 /*
@@ -14,15 +10,7 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class ProprietariosProvider {
 
-  constructor(public httpClient: HttpClient, public enderecoProvider: EnderecoProvider) {
-  }
-
-  inicializarProprietario() : Proprietario{
-    return {
-      id: '',
-      nome: '',
-      endereco: this.enderecoProvider.inicializarEndereco()
-    }
+  constructor(public httpClient: HttpClient) {
   }
 
   getProprietarios(){

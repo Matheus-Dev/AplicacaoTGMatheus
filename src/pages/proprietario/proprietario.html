@@ -14,42 +14,33 @@
 
 
 <ion-content padding>
-    
-      <ion-list>
-    
-          <ion-item>
-              <ion-label stacked>Nome:</ion-label>
-              <ion-input type="text"></ion-input>
-          </ion-item>
-    
-          <ion-item>
-              <ion-label stacked>CPF:</ion-label>
-              <ion-input type="tel"></ion-input>
-          </ion-item>
-    
-          <ion-item>
-              <ion-label stacked>Telefone:</ion-label>
-              <ion-input type="tel" [(ngModel)]="phoneNumber" [textMask]="{mask: masks.phoneNumber}"></ion-input>
-          </ion-item>
-
-          <ion-item>
-              <ion-label stacked>Email:</ion-label>
-              <ion-input type="text"></ion-input>
-          </ion-item>
-    
-          
-    
-      </ion-list>
-    
-      <ion-grid>
-          <ion-row>
-            <ion-col col-6>
-                <button ion-button block >Salvar</button>
-            </ion-col>
-            <ion-col col-6>
-                <button ion-button block >Cancelar</button>
-            </ion-col>
-          </ion-row>
-        </ion-grid>
-    
-    </ion-content>
+    <ion-list>
+        <ion-item>
+            <ion-label stacked>Nome:</ion-label>
+            <ion-input type="text"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label stacked>CPF:</ion-label>
+            <ion-input type="tel"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label stacked>Telefone:</ion-label>
+            <ion-input type="tel" [(ngModel)]="phoneNumber" [textMask]="{mask: masks.phoneNumber}"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label stacked>Email:</ion-label>
+            <ion-input type="text"></ion-input>
+        </ion-item>
+        <endereco></endereco>
+    </ion-list>
+    <ion-grid>
+        <ion-row>
+        <ion-col col-6>
+            <button ion-button block >Salvar</button>
+        </ion-col>
+        <ion-col col-6>
+            <button ion-button block >Cancelar</button>
+        </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-content>

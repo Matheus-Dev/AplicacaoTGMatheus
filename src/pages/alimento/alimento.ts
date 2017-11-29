@@ -1,3 +1,4 @@
+import { Alimento } from './../../models/alimento';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
@@ -15,14 +16,13 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class AlimentoPage {
 
-  unidade : string = "";
-
-  dataValidade : string = "";
+  alimento : Alimento;
 
   unidades : Array<{sigla : string}>;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.unidades = this.listUnidades();
+    this.alimento = new Alimento();
   }
 
   ionViewDidLoad() {

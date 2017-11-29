@@ -19,23 +19,23 @@
     <ion-list>
         
       <ion-item>
-          <ion-label stacked>Tipo: </ion-label>
-          <ion-input type="text"></ion-input>
+          <ion-label stacked>Marca: </ion-label>
+          <ion-input [(ngModel)]="alimento.marca" type="text"></ion-input>
       </ion-item>
 
       <ion-item>
-          <ion-label stacked>Marca: </ion-label>
-          <ion-input type="text"></ion-input>
+          <ion-label stacked>Tipo: </ion-label>
+          <ion-input [(ngModel)]="alimento.tipo" type="text"></ion-input>
       </ion-item>
 
       <ion-item>
           <ion-label stacked>Código de Barras: </ion-label>
-          <ion-input type="tel"></ion-input>
+          <ion-input [(ngModel)]="alimento.codigoBarras" type="text"></ion-input>
       </ion-item>
 
       <ion-item>
           <ion-label stacked>Unidade: </ion-label>
-          <ion-select [(ngModel)]="unidade">
+          <ion-select [(ngModel)]="alimento.unidade">
             <ion-option ion-item *ngFor="let un of unidades">{{un.sigla}}</ion-option>
           </ion-select>
       </ion-item>
@@ -44,7 +44,7 @@
       <ion-item>
 
         <ion-label stacked>Data de Validade:</ion-label>
-        <ion-datetime displayFormat="DD/MM/YYYY" pickerFormat="DD/MM/YYYY" [(ngModel)]="dataValidade"></ion-datetime> 
+        <ion-datetime displayFormat="DD/MM/YYYY" pickerFormat="DD/MM/YYYY" [(ngModel)]="alimento.dataValidade"></ion-datetime> 
       
       </ion-item>
 

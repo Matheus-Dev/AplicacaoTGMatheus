@@ -15,11 +15,31 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class RelatoriosPage {
 
+  filtrosRelatorio: {tipo: string, inicio:Date, termino:Date};
+
+  filtros: Array<string>;
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    this.inicializarFiltros();
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad RelatoriosPage');
+  }
+
+  inicializarFiltros(){
+    this.filtrosRelatorio = {
+      tipo: '',
+      inicio: new Date(),
+      termino: new Date()
+    }
+    this.filtros = [
+      'ANIMAL','COLABORADOR','PROPRIETARIO'
+    ]
+  }
+
+  mostrarData(){
+    alert(this.filtrosRelatorio.inicio);
   }
 
 }

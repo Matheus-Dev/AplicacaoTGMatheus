@@ -1,12 +1,17 @@
 import { Endereco } from './endereco';
 export class Proprietario {
-    id: string;
-    nome: string;
-    endereco: Endereco;
 
+    _id: any;
+    nome: string;
+    cpf: string;
+    telefone: string;
+    endereco: Endereco;
+    haras : any;
     constructor(){
-        this.id = '';
         this.nome = '';
+        this.cpf = '';
+        this.telefone = '';
         this.endereco = new Endereco();
+        this.haras = '';
     }
 }

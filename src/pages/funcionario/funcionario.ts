@@ -24,12 +24,17 @@ export class FuncionarioPage {
   phoneNumber: any = "";
   cep : any = "";
 
+  funcao : string = "";
+
+  funcoes : any;
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.estados = this.listEstados();
     this.masks = {
       phoneNumber: ['(', /[1-9]/, /\d/, ')', /([1-9]{4})/ , '-', /\d/, /\d/, /\d/, /\d/],
       cep : [/\d/, /\d/, /\d/, /\d/, /\d/, '-' , /\d/, /\d/, /\d/]
     };
+    this.funcoes = ['ADMISTRADOR','CAPATAZ','PEÃO'];
   }
 
   ionViewDidLoad() {

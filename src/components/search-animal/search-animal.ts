@@ -1,6 +1,6 @@
 import { AnimaisProvider } from './../../providers/animais/animais';
-import { Animal } from './../../models/animal';
-import { Component } from '@angular/core';
+//import { Animal } from './../../models/animal';
+import { Component, Output, EventEmitter } from '@angular/core';
 
 /**
  * Generated class for the SearchAnimalComponent component.
@@ -14,15 +14,17 @@ import { Component } from '@angular/core';
 })
 export class SearchAnimalComponent {
 
+  @Output() emissorAnimal = new EventEmitter();
+
   animais : any;
-  animalSelecionado: Animal;
+  animalSelecionado: any;
   filtroAnimal: string = '';
 
-  animaisFiltrado : Array<Animal> = [];
+  animaisFiltrado : any = '';
 
   constructor(public animalService: AnimaisProvider) {
     this.getAnimaisService();
-    this.animalSelecionado = new Animal();
+    this.animalSelecionado = '';
   }
 
   ionViewWillEnter(){
@@ -32,7 +34,7 @@ export class SearchAnimalComponent {
   getAnimaisService() {
     this.animalService.getAnimais()
     .then(data => {
-      alert(data);
+      //alert(data);
       this.animais = data;
     })
     .catch(e => {
@@ -59,6 +61,11 @@ export class SearchAnimalComponent {
     this.animalSelecionado = animal;
     this.filtroAnimal = '';
     this.animaisFiltrado = [];
+    this.emissorAnimal.emit(animal);
+  }
+
+  emitirAnimal(){
+    this.emissorAnimal.emit({id : this.animalSelecionado});
   }
 
 }

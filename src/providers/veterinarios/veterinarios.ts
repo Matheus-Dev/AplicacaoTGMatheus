@@ -1,8 +1,5 @@
-import { EnderecoProvider } from './../endereco/endereco';
-import { Veterinario } from '../../models/veterinario';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-
 /*
   Generated class for the VeterinariosProvider provider.
 
@@ -12,17 +9,8 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class VeterinariosProvider {
 
-  constructor(public httpClient: HttpClient,
-              public enderecoProvider: EnderecoProvider) {
+  constructor(public httpClient: HttpClient) {
     console.log('Hello VeterinariosProvider Provider');
-  }
-
-  inicializarVeterinario() : Veterinario{
-    return {
-        id: '',
-        nome: '',
-        endereco: this.enderecoProvider.inicializarEndereco()
-    }
   }
 
   getVeterinarios(){

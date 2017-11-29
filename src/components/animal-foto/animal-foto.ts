@@ -1,20 +1,22 @@
-import { Animal } from './../../models/animal';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 import { ImagePicker } from '@ionic-native/image-picker';
 import { ImageResizer, ImageResizerOptions } from '@ionic-native/image-resizer';
 
+import { Animal } from './../../models/animal';
+
 /**
- * Generated class for the ImageSelectViewComponent component.
+ * Generated class for the AnimalFotoComponent component.
  *
  * See https://angular.io/api/core/Component for more info on Angular
  * Components.
  */
 @Component({
-  selector: 'image-select-view',
-  templateUrl: 'image-select-view.html'
+  selector: 'animal-foto',
+  templateUrl: 'animal-foto.html'
 })
-export class ImageSelectViewComponent {
+export class AnimalFotoComponent {
+
   @Input() animal : Animal = new Animal();
   
   @Output() novaImagem = new EventEmitter();
@@ -23,10 +25,10 @@ export class ImageSelectViewComponent {
 
   imageurlfrompicker : any;
   imageurlfromresizer: any;
-  //imagebase64: any;
 
   constructor(public imagePicker: ImagePicker,
               public imageResizer: ImageResizer) {
+    console.log('Hello AnimalFotoComponent Component');
   }
 
   getImage() {
@@ -80,17 +82,6 @@ export class ImageSelectViewComponent {
       img.src = url;
     });
   }
-
-  /*selecionarImagem(){
-    let image = '';
-    image = this.imageSelectResize.returnStringBase64();
-    alert("Selecionar Image" + image);
-    this.alterarImagem(image);
-  }
-
-  alterarImagem(image){
-    this.imageBase64 = image;
-  }*/
 
   salvarImagem(){
     this.novaImagem.emit(this.imageBase64)

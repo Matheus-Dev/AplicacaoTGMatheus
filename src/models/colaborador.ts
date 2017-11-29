@@ -1,5 +1,6 @@
 import { Endereco } from './endereco';
-export class Proprietario {
+export class Colaborador {
+    _id: any;
     nome: string;
     cpf: string;
     login: string;

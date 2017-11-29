@@ -1,3 +1,5 @@
+import { EnderecoProvider } from './../../providers/endereco/endereco';
+import { Veterinario } from './../../models/veterinario';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
@@ -15,31 +17,37 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class VeterinarioPage {
 
-  siglaEstado : string = '';
-  estados : Array<{sigla : string}>;
-
+  veterinario: Veterinario;
+  listaClasses: Array<string>;  
+  siglasEstados: any;
   masks: any;
-  
-  phoneNumber: any = "";
-  cep : any = "";
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-    this.estados = this.listEstados();
+  constructor(public navCtrl: NavController, public navParams: NavParams,
+              public enderecoService: EnderecoProvider) {
+    this.listClasses();
     this.masks = {
-      phoneNumber: ['(', /[1-9]/, /\d/, ')', /([1-9]{4})/ , '-', /\d/, /\d/, /\d/, /\d/],
-      cep : [/\d/, /\d/, /\d/, /\d/, /\d/, '-' , /\d/, /\d/, /\d/]
+      phoneNumber: ['(', /[1-9]/, /\d/, ')', /([1-9]{4})/ , '-', /\d/, /\d/, /\d/, /\d/]
     };
+    this.veterinario = new Veterinario();
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad VeterinarioPage');
   }
 
-  listEstados () : Array<{sigla : string}>{
-    
-    return [
-      { sigla : 'AC' },
-      { sigla : 'AM' },
+  inicializarSiglas(){
+    this.enderecoService.getSiglasEstados()
+    .then(data => {
+      this.siglasEstados = data;
+    })
+    .catch(e => {
+      alert(e);
+    });
+  }
+
+  listClasses(){
+    this.listaClasses = [
+      'VP','VS','ZP','ZS'
     ]
   }
 

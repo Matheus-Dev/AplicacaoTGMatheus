@@ -1,0 +1,18 @@
+[
+	{
+		"_id": "",
+		"nome": "Remedio para Carapato",
+		"lote": "123456789",
+		"dataValidade": "25/11/2017",
+		"observacoes": "Ser aplicado 2x no dia",
+		"haras": {
+		    "_id": "5a117711bf2d190fd4567b4f",
+		    "codigo": "00001",
+		    "nomeFantasia": "Haras do Cavalo Bravo",
+		    "proprietario": {
+		        "nome": "Paulo Guina"
+		    }
+		},
+		"__v": 0
+	}
+]

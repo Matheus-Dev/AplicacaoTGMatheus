@@ -1,5 +1,4 @@
-import { ImageSelectViewComponent } from './../components/image-select-view/image-select-view';
-import { InfoAnimalComponent } from './../components/info-animal/info-animal';
+import { AnimalFotoComponent } from './../components/animal-foto/animal-foto';
 import { HttpClientModule  } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
@@ -46,6 +45,14 @@ import { ImageResizer} from '@ionic-native/image-resizer';
 import { Camera} from '@ionic-native/camera';
 import { ImageSeletorConverterProvider } from '../providers/image-seletor-converter/image-seletor-converter';
 import { LoginProvider } from '../providers/login/login';
+import { AlimentoProvider } from '../providers/alimento/alimento';
+import { RemedioProvider } from '../providers/remedio/remedio';
+
+import { EnderecoComponent } from './../components/endereco/endereco';
+import { SearchRemedioComponent } from './../components/search-remedio/search-remedio';
+import { SearchAlimentoComponent } from './../components/search-alimento/search-alimento';
+import { InfoAnimalComponent } from './../components/info-animal/info-animal';
+
 
 @NgModule({
   declarations: [
@@ -72,8 +79,11 @@ import { LoginProvider } from '../providers/login/login';
     SearchProprietarioComponent,
     SearchAnimalComponent,
     SearchVeterinarioComponent,
+    SearchAlimentoComponent,
+    SearchRemedioComponent,
     InfoAnimalComponent,
-    ImageSelectViewComponent
+    EnderecoComponent,
+    AnimalFotoComponent
   ],
   imports: [
     BrowserModule,
@@ -103,7 +113,13 @@ import { LoginProvider } from '../providers/login/login';
     ProprietarioPage,
     RemedioPage,
     AlimentoPage,
-    ListAnimaisPage
+    ListAnimaisPage,
+    SearchAlimentoComponent,
+    SearchAnimalComponent,
+    SearchProprietarioComponent,
+    SearchRemedioComponent,
+    SearchVeterinarioComponent,
+    AnimalFotoComponent
   ],
   providers: [
     StatusBar,
@@ -119,7 +135,10 @@ import { LoginProvider } from '../providers/login/login';
     Camera,
     LoadingController,
     ImageSeletorConverterProvider,
-    LoginProvider 
+    LoginProvider,
+    AlimentoProvider,
+    RemedioProvider,
+    EnderecoProvider 
   ]
 })
 export class AppModule {}

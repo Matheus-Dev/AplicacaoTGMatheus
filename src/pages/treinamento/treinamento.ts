@@ -1,4 +1,6 @@
-import { AnimaisProvider } from './../../providers/animais/animais';
+import { Atividade } from './../../models/atividade';
+//import { Animal } from './../../models/animal';
+//import { AnimaisProvider } from './../../providers/animais/animais';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
@@ -16,52 +18,48 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class TreinamentoPage {
 
-  animais: any;
-  animalSelecionado : {nome : string};
-  filtroAnimal : string = '';
-  animaisFiltrado : any;
-  treinamento : {inicio: string, termino : string, tipo: string};
-  treinamentos: Array<{treinamento}> = [];
+  atividade: Atividade;
+  treinamento : {inicio: string, termino : string, tipo: string, observacao: string};
+  treinamentos: Array<string> = [];
 
-  constructor(public navCtrl: NavController, public navParams: NavParams,
-              public animaisProvider: AnimaisProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
                 
-      this.animais = this.inicializarListaAnimais();
-      this.animaisFiltrado = [];
-      this.animalSelecionado = {nome : ''};
-      this.treinamento = {inicio: '', termino : '', tipo : ''}; 
+      this.atividade = new Atividade();
+      this.treinamento = {inicio: '', termino : '', tipo : '', observacao: ''};
+      this.inicializarTreinamentos(); 
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad TreinamentoPage');
   }
 
-  getItems(ev) {
-    // set val to the value of the searchbar
-    let val = ev.target.value;
-    console.log(val);
-    // if the value is an empty string don't filter the items
-    if (val && val.trim() != '') {
-      this.animaisFiltrado = this.animais.filter((animal) => {
-        return (animal.nome.toLowerCase().indexOf(val.toLowerCase()) > -1);
-      })
-    }else{
-      this.animaisFiltrado = [];
-    }
-
-  }
-
-  inicializarListaAnimais () : Array<{nome: string}> {
-    return [
-      {nome : "Cavalo Tenso"},
-      {nome : "Pé de Pano"}
+  inicializarTreinamentos(){
+    this.treinamentos = [
+      'MARCHA','CAVALGADA'
     ]
   }
 
-  selecionarAnimal (animal) {
-    this.animalSelecionado = animal;
-    this.filtroAnimal = '';
-    this.animaisFiltrado = [];
+  mostrarDados(){
+    let dataCricao = new Date(this.formatarData());
+    //hora.toISOString();
+    alert(dataCricao.toISOString());
+    //alert(hora);
+    alert(this.treinamento.tipo);
+    alert(this.atividade.animal);
+
+  }
+
+  recuperarAnimal(animal){
+    this.atividade.animal = animal._id;
+  }
+
+  formatarData() : string{
+    let data = new Date();
+    let dateNow = data.toISOString();
+    alert("valor antes"+dateNow);
+    dateNow = dateNow.replace("Z", "-02:00");
+    alert("valor depois"+dateNow);
+    return dateNow;
   }
 
 }

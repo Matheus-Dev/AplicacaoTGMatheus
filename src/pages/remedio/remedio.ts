@@ -1,3 +1,4 @@
+import { Remedio } from './../../models/remedio';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
@@ -15,6 +16,8 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class RemedioPage {
 
+  remedio: Remedio;
+
   dataValidade : string = "";
   tipoRemedio : string = "";
 
@@ -22,6 +25,7 @@ export class RemedioPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
       this.tiposRemedios = this.listTiposRemedios();
+      this.remedio = new Remedio();
   }
 
   ionViewDidLoad() {

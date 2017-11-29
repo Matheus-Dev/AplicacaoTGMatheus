@@ -16,4 +16,40 @@
 
 <ion-content padding>
 
+      
+  <ion-list>
+    
+    <ion-item>
+      <ion-label stacked>Atividades por: </ion-label>
+      <ion-select [(ngModel)]="filtrosRelatorio.tipo">
+        <ion-option ion-item *ngFor="let fl of filtros">{{fl}}</ion-option>
+        </ion-select>
+    </ion-item>
+
+    <ion-item>
+        <ion-label stacked>Nome:</ion-label>
+        <ion-input type="text"></ion-input>
+    </ion-item>
+        
+    <ion-item>
+      <ion-label stacked>Inicio:</ion-label>
+      <ion-datetime displayFormat="DD/MM/YYYY HH:mm" pickerFormat="DD-MM-YYYY" [(ngModel)]="filtrosRelatorio.inicio"></ion-datetime>                  
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>Termino:</ion-label>
+      <ion-datetime displayFormat="DD/MM/YYYY HH:mm" pickerFormat="DD-MM-YYYY" [(ngModel)]="filtrosRelatorio.termino"></ion-datetime>                  
+    </ion-item>
+  </ion-list>
+
+  <ion-grid>
+      <ion-row>
+        <ion-col col-6>
+            <button ion-button block (click)="mostrarData()">Gerar</button>
+        </ion-col>
+        <ion-col col-6>
+            <button ion-button block >Cancelar</button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
 </ion-content>

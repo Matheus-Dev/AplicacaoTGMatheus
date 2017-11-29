@@ -15,7 +15,14 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class MedicamentoPage {
 
+  medicamento : {horaAplicacao: Date};
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    this.inicializar();
+  }
+
+  inicializar() {
+    this.medicamento = {horaAplicacao : new Date()}
   }
 
   ionViewDidLoad() {

@@ -18,30 +18,29 @@
 
         <ion-item>
             <ion-label stacked>Nome: </ion-label>
-            <ion-input type="text"></ion-input>
+            <ion-input [(ngModel)]="remedio.nome" type="text"></ion-input>
         </ion-item>
 
         <ion-item>
             <ion-label stacked>Lote: </ion-label>
-            <ion-input type="text"></ion-input>
+            <ion-input [(ngModel)]="remedio.lote" type="text"></ion-input>
         </ion-item>
 
         <ion-item>
             <ion-label stacked>Data de Validade:</ion-label>
-            <ion-label stacked>Data:</ion-label>
-            <ion-datetime displayFormat="DD/MM/YYYY" pickerFormat="DD/MM/YYYY" [(ngModel)]="dataValidade"></ion-datetime>                     
+            <ion-datetime displayFormat="DD/MM/YYYY" pickerFormat="DD/MM/YYYY" [(ngModel)]="remedio.dataValidade"></ion-datetime>                     
         </ion-item>
 
         <ion-item>
             <ion-label stacked>Tipo: </ion-label>
-            <ion-select [(ngModel)]="tipoRemedio">
+            <ion-select [(ngModel)]="remedio.tipo">
               <ion-option ion-item *ngFor="let tp of tiposRemedios">{{tp.tipo}}</ion-option>
             </ion-select>
         </ion-item>
 
         <ion-item>
             <ion-label stacked>Observações: </ion-label>
-            <ion-textarea type="text"></ion-textarea>
+            <ion-textarea [(ngModel)]="remedio.observacoes" type="text"></ion-textarea>
         </ion-item>
 
     </ion-list>

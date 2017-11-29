@@ -1,0 +1,12 @@
+[
+	{
+		"_id": "5a116ec3fbad8e1498f99821",
+		"marca":"Ração Especial",
+		"tipo": "Ração de Competição",
+		"codigoBarras":"7891027118884",
+		"unidade":"KG",
+		"dataValidade":"23/11/2017",
+		"haras": "5a117711bf2d190fd4567b4f",
+	    "__v": 0
+	}
+]

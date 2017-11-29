@@ -4,8 +4,8 @@
 </ion-item>
 <ion-searchbar [(ngModel)]="filtroAnimal" (ionInput)="getAnimais($event)" ></ion-searchbar>
 <ion-list>
-  <ion-item *ngFor="let animal of animaisFiltrado" (click) = "selecionarAnimal(animal)">
-      {{ animal.nome }}
+  <ion-item *ngFor="let animal of animaisFiltrado" (click)="selecionarAnimal(animal)">
+      {{animal.nome}}
   </ion-item>
   <ion-item>
     <ion-label stacked>Animal Selecionado:</ion-label>
@@ -16,4 +16,3 @@
     </div>
   </ion-item>
 </ion-list>
-

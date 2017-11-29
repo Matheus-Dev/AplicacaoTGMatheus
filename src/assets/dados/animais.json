@@ -1,31 +1,15 @@
 [
-  {
-    "id": "1",
-    "nome": "Cavalo Tenso",
-    "image": "assets/imgs/cavalo_padrao.jpg",
-    "proprietario": {
-        "id": "2",
-        "nome": "Jô Abidu",
-        "endereco" : {
-          "endereco": "",
-          "bairro": "",
-          "cidade": "",
-          "uf": "",
-          "cep": "",
-          "numero": ""	
-        } 
-    },
-    "veterinario": {
-        "id": "3",
-        "nome": "Maluco do Casebre",
-        "endereco" : {
-          "endereco": "",
-          "bairro": "",
-          "cidade": "",
-          "uf": "",
-          "cep": "",
-          "numero": ""	
-        }
+    {
+        "_id": "5a117f25fefd0d0a807be4de",
+        "codigo": "1",
+        "nome": "Pé de Pano",
+        "dataNascimento": "2017-11-21T02:00:00.000Z",
+        "raca": "Garanhão Italiano",
+        "sexo": "Macho",
+        "proprietario": "5a11787d3336a81be477393b",
+        "veterinario": "5a116ec3fbad8e1498f99821", 
+        "haras": "5a117711bf2d190fd4567b4f",
+        "__v": 0,
+        "image": "assets/imgs/cavalo.png"
     }
-  }
 ]

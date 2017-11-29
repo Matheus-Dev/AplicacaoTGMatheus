@@ -6,9 +6,9 @@
 -->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>Animal</ion-title>
-  </ion-navbar>
+    <ion-navbar>
+        <ion-title>Animal</ion-title>
+    </ion-navbar>
 
 </ion-header>
 
@@ -19,54 +19,57 @@
 
         <ion-item>
             <ion-label stacked>Codigo:</ion-label>
-            <ion-input type="text"></ion-input>
+            <ion-input [(ngModel)]="animal.codigo" type="text"></ion-input>
         </ion-item>
 
         <ion-item>
             <ion-label stacked>Nome:</ion-label>
-            <ion-input type="text"></ion-input>
+            <ion-input [(ngModel)]="animal.nome" type="text"></ion-input>
         </ion-item>
 
         <ion-item>
             <ion-label stacked>Data Nascimento:</ion-label>
-            <ion-datetime displayFormat="DD/MM/YYYY" pickerFormat="DD/MM/YYYY"></ion-datetime> 
+            <ion-datetime displayFormat="DD/MM/YYYY" pickerFormat="DD/MM/YYYY" [(ngModel)]="animal.dataNascimento"></ion-datetime>
         </ion-item>
 
         <ion-item>
             <ion-label stacked>Raça:</ion-label>
-            <ion-input type="text"></ion-input>
+            <ion-input [(ngModel)]="animal.raca" type="text"></ion-input>
         </ion-item>
 
-        <ion-list radio-group [(ngModel)]="sexoAnimal">  
+        <ion-list radio-group [(ngModel)]="animal.sexo">
             <ion-list-header>
                 Sexo:
             </ion-list-header>
-    
+
             <ion-item>
                 <ion-label>Macho</ion-label>
                 <ion-radio value="M"></ion-radio>
             </ion-item>
-    
+
             <ion-item>
                 <ion-label>Femea</ion-label>
                 <ion-radio value="F"></ion-radio>
             </ion-item>
-    
+
         </ion-list>
-        
+
+        <animal-foto [animal] = "animal" (salvarImagem)="novaImagem($event)"></animal-foto>
+
         <search-proprietario></search-proprietario>
+
         <search-veterinario></search-veterinario>
-        <image-select-view [animal]="animal" (salvarImagem)="novaImagem($event)"></image-select-view>
+
         <ion-grid>
             <ion-row>
-              <ion-col col-6>
-                  <button ion-button block (click)="salvarAnimal()">Salvar</button>
-              </ion-col>
-              <ion-col col-6>
-                  <button ion-button block (click)="cancelar()">Cancelar</button>
-              </ion-col>
+                <ion-col col-6>
+                    <button ion-button block (click)="salvarAnimal()">Salvar</button>
+                </ion-col>
+                <ion-col col-6>
+                    <button ion-button block (click)="cancelar()">Cancelar</button>
+                </ion-col>
             </ion-row>
-          </ion-grid>
+        </ion-grid>
 
     </ion-list>
 

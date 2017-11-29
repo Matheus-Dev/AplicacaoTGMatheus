@@ -1,0 +1,31 @@
+[
+    {
+        "_id": "5a117711bf2d190fd4567b4f",
+        "codigo": "00001",
+        "nomeFantasia": "Haras do Cavalo Bravo",
+        "razaoSocial": "Haras do Cavalo Bravo ",
+        "inscricaoEstadual": "892.486.037.509",
+        "__v": 0,
+        "endereco": {
+            "endereco": "Rua Lorena",
+            "bairro": "Vila Romana",
+            "cidade": "Cruzeiro",
+            "uf": "SP",
+            "cep": "12722-040",
+            "numero": "131"
+        },
+        "proprietario": {
+            "nome": "Paulo Guina",
+            "cpf": "433982858-05",
+            "telefone": "3145-2604",
+            "endereco": {
+                "endereco": "Rua Lorena",
+                "bairro": "Vila Romana",
+                "cidade": "Cruzeiro",
+                "uf": "SP",
+                "cep": "12722-040",
+                "numero": "131"
+            }
+        }
+    }
+]

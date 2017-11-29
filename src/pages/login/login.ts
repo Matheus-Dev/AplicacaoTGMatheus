@@ -40,7 +40,7 @@ export class LoginPage {
   }
 
   ionViewWillEnter(){
-    this.verificarDisponibilidadeAPI();
+    //this.verificarDisponibilidadeAPI();
   }
 
   goPageHome() {

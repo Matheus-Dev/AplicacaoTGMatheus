@@ -14,5 +14,32 @@
 
 
 <ion-content padding>
+  <search-animal></search-animal>
+
+  <search-remedio></search-remedio>
+
+  <ion-list>
+    <ion-item>
+      <ion-label stacked>Hora da Aplicação:</ion-label>
+      <ion-datetime displayFormat="HH:mm" pickerFormat="HH:mm" [(ngModel)]="medicamento.horaAplicacao"></ion-datetime>      
+    </ion-item>
+  
+    <ion-item>
+        <ion-label stacked>Observações: </ion-label>
+        <ion-textarea type="text"></ion-textarea>
+    </ion-item>
+
+  </ion-list>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col col-6>
+          <button ion-button block >Salvar</button>
+      </ion-col>
+      <ion-col col-6>
+          <button ion-button block >Cancelar</button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 
 </ion-content>

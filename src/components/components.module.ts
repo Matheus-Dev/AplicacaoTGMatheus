@@ -6,28 +6,40 @@ import { EnderecoComponent } from './endereco/endereco';
 import { InfoAnimalComponent } from './info-animal/info-animal';
 import { InfoProprietarioComponent } from './info-proprietario/info-proprietario';
 import { InfoVeterinarioComponent } from './info-veterinario/info-veterinario';
-import { ImageSelectViewComponent } from './image-select-view/image-select-view';
+import { SearchAlimentoComponent } from './search-alimento/search-alimento';
+import { SearchRemedioComponent } from './search-remedio/search-remedio';
+import { AnimalFotoComponent } from './animal-foto/animal-foto';
+
 @NgModule({
-	declarations: [SearchAnimalComponent,
-    SearchProprietarioComponent,
-    SearchVeterinarioComponent,
-    SearchAnimalComponent,
-    SearchVeterinarioComponent,
-    EnderecoComponent,
-    InfoAnimalComponent,
-    InfoProprietarioComponent,
-    InfoVeterinarioComponent,
-    ImageSelectViewComponent],
+	declarations: [
+        SearchAnimalComponent,
+        SearchProprietarioComponent,
+        SearchVeterinarioComponent,
+        SearchAnimalComponent,
+        SearchVeterinarioComponent,
+        EnderecoComponent,
+        InfoAnimalComponent,
+        InfoProprietarioComponent,
+        InfoVeterinarioComponent,
+        SearchAlimentoComponent,
+        SearchRemedioComponent,
+        AnimalFotoComponent,
+    ],
 	imports: [],
-	exports: [SearchAnimalComponent,
-    SearchProprietarioComponent,
-    SearchVeterinarioComponent,
-    SearchAnimalComponent,
-    SearchVeterinarioComponent,
-    EnderecoComponent,
-    InfoAnimalComponent,
-    InfoProprietarioComponent,
-    InfoVeterinarioComponent,
-    ImageSelectViewComponent]
+	exports: [
+        SearchAnimalComponent,
+        SearchProprietarioComponent,
+        SearchVeterinarioComponent,
+        SearchAnimalComponent,
+        SearchVeterinarioComponent,
+        EnderecoComponent,
+        InfoAnimalComponent,
+        InfoProprietarioComponent,
+        InfoVeterinarioComponent,
+        SearchAlimentoComponent,
+        SearchRemedioComponent,
+        AnimalFotoComponent
+    ]
 })
+
 export class ComponentsModule {}

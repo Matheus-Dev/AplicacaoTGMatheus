@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 import { Animal } from './../../models/animal';
-import { AnimaisProvider } from '../../providers/animais/animais';
+//import { AnimaisProvider } from '../../providers/animais/animais';
 
 /**
  * Generated class for the AnimalPage page.
@@ -20,11 +20,9 @@ export class AnimalPage {
 
   animal: Animal;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, 
-              public animalProvider: AnimaisProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
             
       this.animal = new Animal();
-    
   }
 
   ionViewDidLoad() {

@@ -1,9 +1,30 @@
-[{
-    "id": "1",
-    "nome": "James"
-  },
-  {
-    "id": "2",
-    "nome": "Demacol"
-  }
+[
+    {
+        "_id": "5a116ec3fbad8e1498f99821",
+        "nome": "Jailson Mendes",
+        "cpf": "433982858-05",
+        "telefone": "3145-2604",
+        "haras": {
+            "_id": "5a117711bf2d190fd4567b4f",
+            "codigo": "00001",
+            "nomeFantasia": "Haras do Cavalo Bravo",
+            "proprietario": {
+                "nome": "Paulo Guina"
+            }
+        },
+        "__v": 0,
+        "endereco": {
+            "endereco": "Rua Lorena",
+            "bairro": "Vila Romana",
+            "cidade": "Cruzeiro",
+            "uf": "SP",
+            "cep": "12722-040",
+            "numero": "131"
+        },
+        "crmv": {
+            "uf": "SP",
+            "inscricao": "00000",
+            "classe": "VZ"
+        }
+    }
 ]

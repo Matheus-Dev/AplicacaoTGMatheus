@@ -13,8 +13,8 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class AnimaisProvider {
 
-  urlAPI : string = 'http://192.168.0.108:3000/animal';
-
+  //urlAPI : string = 'http://192.168.0.108:3000/animal';
+  urlAPI: string = 'assets/dados/animais.json';
   //'assets/dados/animais.json'
 
   constructor(public httpClient: HttpClient,

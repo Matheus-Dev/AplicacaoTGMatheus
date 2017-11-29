@@ -7,7 +7,7 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>Alimentacao</ion-title>
+    <ion-title>Alimentação</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -15,4 +15,37 @@
 
 <ion-content padding>
 
+    <search-animal (emissorAnimal)="recuperarAnimal($event)" ></search-animal>
+    
+    <search-alimento ></search-alimento>
+    
+    <ion-list>
+
+        <ion-item>
+          <ion-label stacked>Horário:</ion-label>
+          <ion-datetime displayFormat="HH:mm" pickerFormat="HH:mm" [(ngModel)]="dadosAtividade.horario"></ion-datetime>
+        </ion-item>
+
+      <ion-item>
+        <ion-label staked>Quantidade:</ion-label>
+        <ion-input [(ngModel)]="dadosAtividade.qtde" type="tel"></ion-input>
+      </ion-item>
+
+      <ion-item>
+          <ion-label stacked>Observações: </ion-label>
+          <ion-textarea [(ngModel)]="atividade.observacoes" type="text"></ion-textarea>
+      </ion-item>
+    
+    </ion-list>
+
+    <ion-grid>
+        <ion-row>
+          <ion-col col-6>
+              <button ion-button block (click)="mostrarAnimal()" >Salvar</button>
+          </ion-col>
+          <ion-col col-6>
+              <button ion-button block >Cancelar</button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
 </ion-content>

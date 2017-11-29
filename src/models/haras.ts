@@ -1,7 +1,8 @@
-import { Proprietario } from './colaborador';
+import { Proprietario } from './proprietario';
 import { Endereco } from './endereco';
 export class Haras{
 
+    _id: any;
     codigo: string;
     nomeFantasia: string;
     razaoSocial: string;
