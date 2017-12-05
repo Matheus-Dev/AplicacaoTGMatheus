@@ -3,20 +3,23 @@
 export class Atividade{
 
     _id: any;
-    codigo: string;
+    codigo: number;
     animal: any;
+    tipo: string;
     detalhesAtividade: Object;
     dataCriacao: Date;
     colaborador: any;
     observacoes: string;
+    haras: any;
 
     constructor(){
         
-        this.codigo = '';
+        //this.codigo = 0;
         this.animal = '';
         this.detalhesAtividade = {};
         this.colaborador = '';
         this.dataCriacao = new Date();
         this.observacoes = '';
+        this.haras = '';
     }
 }

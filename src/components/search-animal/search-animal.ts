@@ -32,9 +32,9 @@ export class SearchAnimalComponent {
   }
 
   getAnimaisService() {
-    this.animalService.getAnimais()
+    let id = '1';
+    this.animalService.getAnimaisAtivos(id)
     .then(data => {
-      //alert(data);
       this.animais = data;
     })
     .catch(e => {

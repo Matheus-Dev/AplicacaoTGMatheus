@@ -27,7 +27,8 @@ export class SearchProprietarioComponent {
   }
 
   getProprietariosService() {
-    this.proprietarioService.getProprietarios()
+    let id = '1';
+    this.proprietarioService.getProprietariosAtivos(id)
     .then(data => {
       this.proprietarios = data;
       console.log(this.proprietarios);

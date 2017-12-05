@@ -1,8 +1,10 @@
+import { RegistroPage } from './../registro/registro';
 import { LoginProvider } from './../../providers/login/login';
 import { Component} from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 import { HomePage } from '../home/home';
+import { CadastrosHarasPage } from "../cadastros-haras/cadastros-haras";
 
 /**
  * Generated class for the LoginPage page.
@@ -19,10 +21,16 @@ import { HomePage } from '../home/home';
 export class LoginPage {
 
   message : any;
-  colaboradorLogado : any = {};
+  colaboradorLogado : {codigo: string, login: string, senha: string};
 
   constructor(public navCtrl: NavController, public navParams: NavParams,
               public loginProvider: LoginProvider) {
+
+            this.colaboradorLogado = {
+              codigo : '',
+              login: '',
+              senha: ''
+            }
   }
 
   verificarDisponibilidadeAPI(){
@@ -43,18 +51,30 @@ export class LoginPage {
     //this.verificarDisponibilidadeAPI();
   }
 
-  goPageHome() {
-    this.colaboradorLogado.nome = 'Matheus Augusto';
-    this.navCtrl.setRoot(HomePage, {
-      colaboradorLogado : this.colaboradorLogado
+  realizarLogin(){
+    let dados : any;
+    this.loginProvider.realizarLogin(this.colaboradorLogado)
+    .then(data => {
+      dados = data;
+      alert("Aviso: "+dados.message);
+      if(dados.status == 200){
+        this.navCtrl.setRoot(HomePage, {
+          colaboradorLogado : dados.data
+        });
+      }
+    })
+    .catch(e =>{
+      alert(e);
     });
-    //this.navParams.get('this.colaboradorLogado');
   }
 
-  openPage(page) {
+  openPage() {
     // Reset the content nav to have just this page
     // we wouldn't want the back button to show in this scenario
-    
+  }
+
+  abrirPaginaCadastro(){
+    this.navCtrl.push(RegistroPage);
   }
 
 }

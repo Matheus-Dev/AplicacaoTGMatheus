@@ -23,12 +23,12 @@ export class ListAnimaisPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams,
               public animaisProvider : AnimaisProvider ) {
-                
+          
           this.inicializarListaAnimais();
   }
 
   inicializarListaAnimais(){
-    this.animaisProvider.getAnimais()
+    this.animaisProvider.getAnimaisAtivos(this.navParams.get('colaboradorLogado._id'))
     .then(data => {
       this.animais = data;
     });

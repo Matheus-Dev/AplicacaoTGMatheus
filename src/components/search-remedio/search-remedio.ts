@@ -27,7 +27,8 @@ export class SearchRemedioComponent {
   }
 
   getRemedioService() {
-    this.remedioService.getRemedios()
+    let id = '1';
+    this.remedioService.getRemediosValidos(id)
     .then(data => {
       //alert(data);
       this.remedios = data;

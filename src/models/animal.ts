@@ -12,7 +12,8 @@ export class Animal {
     image: string;
     haras: any;
     proprietario: any;
-    veterinario: any;    
+    veterinario: any;  
+    isAtivo: boolean;  
     constructor(){
         this.codigo = '';
         this.nome = '';
@@ -20,11 +21,9 @@ export class Animal {
         this.raca = '';
         this.sexo = '';
         this.image = 'assets/imgs/cavalo_padrao.jpg';
-        //this.proprietario = new Proprietario();
-        //this.veterinario = new Veterinario();
-        //this.haras = new Haras();
         this.proprietario = '';
         this.veterinario = '';
         this.haras = '';
+        this.isAtivo = true;
     }
 }

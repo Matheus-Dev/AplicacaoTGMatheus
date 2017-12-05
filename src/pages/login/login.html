@@ -15,22 +15,36 @@
 
     <ion-item>
       <ion-label stacked>Código Haras</ion-label>
-      <ion-input type="text" value=""></ion-input>
+      <ion-input [(ngModel)]="colaboradorLogado.codigo" type="text"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label stacked>Login</ion-label>
-      <ion-input type="text" value=""></ion-input>
+      <ion-input [(ngModel)]="colaboradorLogado.login" type="text"></ion-input>
     </ion-item>
     
     <ion-item>
       <ion-label stacked>Password</ion-label>
-      <ion-input type="password"></ion-input>
+      <ion-input [(ngModel)]="colaboradorLogado.senha" type="password"></ion-input>
     </ion-item>
 
     <ion-item>
-      <button menuClose ion-button full (click) = "goPageHome()">Entrar</button>
+      <button menuClose ion-button full (click) = "realizarLogin()">Entrar</button>
     </ion-item>
+    
+    <ion-grid>
+      <ion-row>
+        <ion-col col-6>
+           <a href="#" (click)="abrirPaginaCadastro()">Registra-se</a>
+           <!-- <button ion-button full (click)="abrirPaginaCadastro()">Registra-se</button> -->
+        </ion-col>
+        <ion-col col-6>
+           <a href="#" >Esqueceu a senha?</a> 
+           <!-- <button ion-button full>Esqueceu a senha?</button> -->
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    
     
     </ion-list>
 </ion-content>

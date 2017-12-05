@@ -1,3 +1,6 @@
+import { EnderecoharasPage } from './../pages/enderecoharas/enderecoharas';
+import { RegistroPage } from './../pages/registro/registro';
+import { CadastrosHarasPage } from './../pages/cadastros-haras/cadastros-haras';
 import { AnimalFotoComponent } from './../components/animal-foto/animal-foto';
 import { HttpClientModule  } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
@@ -13,6 +16,8 @@ import { HomePage } from '../pages/home/home';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+
+import { DocumentViewer } from '@ionic-native/document-viewer';
 
 import { LoginPage } from '../pages/login/login';
 import { ConfiguracaoPage } from '../pages/configuracao/configuracao';
@@ -52,7 +57,16 @@ import { EnderecoComponent } from './../components/endereco/endereco';
 import { SearchRemedioComponent } from './../components/search-remedio/search-remedio';
 import { SearchAlimentoComponent } from './../components/search-alimento/search-alimento';
 import { InfoAnimalComponent } from './../components/info-animal/info-animal';
+import { AtividadesProvider } from '../providers/atividades/atividades';
 
+import { HTTP } from '@ionic-native/http';
+import { FileTransfer } from '@ionic-native/file-transfer';
+import { File } from '@ionic-native/file';
+import { AndroidPermissions } from '@ionic-native/android-permissions';
+import { ColaboradorProvider } from '../providers/colaborador/colaborador';
+import { HarasProvider } from '../providers/haras/haras';
+import { GlobalvariablesProvider } from '../providers/globalvariables/globalvariables';
+import { BrMaskerModule } from 'brmasker-ionic-3';
 
 @NgModule({
   declarations: [
@@ -76,6 +90,9 @@ import { InfoAnimalComponent } from './../components/info-animal/info-animal';
     RemedioPage,
     AlimentoPage,
     ListAnimaisPage,
+    CadastrosHarasPage,
+    RegistroPage,
+    EnderecoharasPage,
     SearchProprietarioComponent,
     SearchAnimalComponent,
     SearchVeterinarioComponent,
@@ -90,7 +107,9 @@ import { InfoAnimalComponent } from './../components/info-animal/info-animal';
     IonicModule.forRoot(MyApp),
     FormsModule,
     TextMaskModule,
-    HttpClientModule
+    HttpClientModule,
+    BrMaskerModule
+    //DocumentViewer 
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -114,6 +133,9 @@ import { InfoAnimalComponent } from './../components/info-animal/info-animal';
     RemedioPage,
     AlimentoPage,
     ListAnimaisPage,
+    CadastrosHarasPage,
+    RegistroPage,
+    EnderecoharasPage,    
     SearchAlimentoComponent,
     SearchAnimalComponent,
     SearchProprietarioComponent,
@@ -138,7 +160,16 @@ import { InfoAnimalComponent } from './../components/info-animal/info-animal';
     LoginProvider,
     AlimentoProvider,
     RemedioProvider,
-    EnderecoProvider 
+    EnderecoProvider,
+    AtividadesProvider,
+    DocumentViewer,
+    HTTP,
+    FileTransfer,
+    File,
+    AndroidPermissions,
+    ColaboradorProvider,
+    HarasProvider,
+    GlobalvariablesProvider
   ]
 })
 export class AppModule {}

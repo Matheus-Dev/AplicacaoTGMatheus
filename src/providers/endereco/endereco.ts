@@ -11,6 +11,7 @@ import { Injectable } from '@angular/core';
 export class EnderecoProvider {
 
   estados : string = 'assets/dados/estados.json';
+  //urlAPIEnrececo = 'https://viacep.com.br/ws/12722-040/json/';
 
   constructor(public httpClient: HttpClient) {
     console.log('Hello EnderecoProvider Provider');
@@ -23,6 +24,22 @@ export class EnderecoProvider {
       }, err => {
         alert('Provider'+err);
         console.log(err);
+      });
+    });
+  }
+
+  getCep(cep){
+    return new Promise(resolve => {
+      this.httpClient.get('https://viacep.com.br/ws/'+cep+'/json/').subscribe(data => {
+        resolve(data);
+      }, err => {
+        let dados = '';
+        for (let key in err){
+          let attrName = key;
+          let attrValue = err[key];
+          dados = dados + ' ' +attrName+' '+attrValue+' \n';
+        }
+        alert('Error'+dados);
       });
     });
   }

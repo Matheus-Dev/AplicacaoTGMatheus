@@ -8,24 +8,17 @@ export class Veterinario {
     cpf: string;
     telefone: string;
     endereco: Endereco;
-    //haras: Haras;
     haras: any;
-    crmv: {
-            uf: string, 
-            inscricao: string, 
-            classe: string
-    };
+    crmv: any;
+    isAtivo: boolean;
+
     constructor(){
         this.nome = '';
         this.cpf = '';
         this.telefone = '';
-        this.crmv = {
-            uf: '',
-            inscricao: '',
-            classe: ''    
-        }
+        this.crmv = {};
         this.endereco = new Endereco();
-        //this.haras = new Haras();
         this.haras = '';
+        this.isAtivo = true;
     }
 }

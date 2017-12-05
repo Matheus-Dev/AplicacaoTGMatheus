@@ -1,4 +1,5 @@
-import { HttpClient } from '@angular/common/http';
+import { GlobalvariablesProvider } from './../globalvariables/globalvariables';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 /*
@@ -10,17 +11,43 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class LoginProvider {
 
-  urlTeste : string = "http://192.168.0.108:3000";
+  urlApi : string = "http://192.168.0.106:3000";
 
-  constructor(public http: HttpClient) {
+  constructor(public http: HttpClient, public global: GlobalvariablesProvider) {
   }
 
   verificarDisponibilidadeAPI(){
     return new Promise(resolve => {
-      this.http.get(this.urlTeste+'/').subscribe(data => {
+      this.http.get(this.urlApi+'/', {
+        headers: new HttpHeaders().set('Content-Type', 'application/json; charset=utf-8'),
+      }).subscribe(data => {
         resolve(data);
       }, err => {
         //alert("Tela Provider"+err);
+      });
+    });
+  }
+
+  realizarLogin(colaborador: any){
+    let error = '';
+
+    let api = '/colaborador/authenticate/'
+    +colaborador.codigo+'/'
+    +colaborador.login+'/'
+    +colaborador.senha;
+
+    return new Promise(resolve => {
+      this.http.get(this.urlApi+api, {
+        headers: new HttpHeaders().set('Content-Type', 'application/json; charset=utf-8'),
+      }).subscribe(data => {
+        resolve(data);
+      }, err => {
+        for (let key in err){
+          let attrName = key;
+          var attrValue = err[key];
+          error = error + ' ' + attrName + ' ' + attrValue + '\n';
+        } 
+        alert(error);
       });
     });
   }

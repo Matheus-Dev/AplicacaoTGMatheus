@@ -1,15 +1,15 @@
 export class Endereco {
-    endereco: string;
+    logradouro: string;
     bairro: string;
-    cidade: string;
+    localidade: string;
     uf: string;
     cep: string;
     numero: string;
 
     constructor(){
-        this.endereco= '';
+        this.logradouro= '';
         this.bairro= '';
-        this.cidade= '';
+        this.localidade= '';
         this.uf= '';
         this.cep= '';
         this.numero= '';

@@ -1,3 +1,4 @@
+import { NavParams } from 'ionic-angular';
 import { AlimentoProvider } from './../../providers/alimento/alimento';
 import { Alimento } from './../../models/alimento';
 import { Component } from '@angular/core';
@@ -27,7 +28,8 @@ export class SearchAlimentoComponent {
   }
 
   getAlimentoService() {
-    this.alimentoService.getAlimentos()
+    let id = '1';
+    this.alimentoService.getAlimentosValidos(id)
     .then(data => {
       //alert(data);
       this.alimentos = data;

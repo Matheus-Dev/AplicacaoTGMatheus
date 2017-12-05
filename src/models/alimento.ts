@@ -7,6 +7,7 @@ export class Alimento {
     unidade: string;
     dataValidade: Date;
     haras: any;
+    isValido: boolean;
     
     constructor() {
         this.marca = '';
@@ -15,5 +16,6 @@ export class Alimento {
         this.unidade = '';
         this.dataValidade = new Date();
         this.haras = '';
+        this.isValido = true;
     }
 }

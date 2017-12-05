@@ -1,0 +1,45 @@
+<!--
+  Generated template for the RegistroPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+</ion-header>
+
+
+<ion-content padding>
+  <br>
+  <br>
+  <br>
+  <br>
+  <ion-list>
+    <p>Para pode utilizar o aplicativo é necessário realizar um pré-cadastro
+      com algumas informações referentes ao haras.
+      Caso já tenha feito o pré-cadastro, insira no campo abaixo
+       a chave de acesso que foi enviado no seu email:
+    </p>
+    <ion-label stacked>Chave de Acesso:</ion-label>
+    <ion-grid>
+      <ion-row>
+
+        <ion-col col-10>
+          <ion-item>
+              <ion-input [(ngModel)]="chaveHaras" type="text"></ion-input>              
+          </ion-item>
+        </ion-col>
+        <ion-col col-2>
+            <button ion-button block (click)="validarHaras()">OK</button>             
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <p>
+      Para realizar o pré-cadastro, por favor clique no botão "Cadastrar-se"
+    </p>
+    <ion-item>
+        <button ion-button block (click)="abrirTelaPreRegistro()">Cadastrar-se</button>        
+    </ion-item>
+
+  </ion-list>
+</ion-content>

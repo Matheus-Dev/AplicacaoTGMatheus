@@ -5,15 +5,15 @@
   </ion-item>
     <ion-item>
       <ion-label stacked>Cep: </ion-label>
-      <ion-input type="tel" [(ngModel)]="endereco.cep" [textMask]="{mask: masks.cep}"></ion-input>
+      <ion-input type="tel" [(ngModel)]="endereco.cep" [brmasker]="{mask:'99999-999', len:9}" (blur)="buscarCep()"></ion-input>
     </ion-item>
     <ion-item>
       <ion-label stacked>Rua: </ion-label>
-      <ion-input [(ngModel)]="endereco.endereco" type="text"></ion-input>
+      <ion-input [(ngModel)]="endereco.logradouro" type="text"></ion-input>
     </ion-item>
     <ion-item>
         <ion-label stacked>Numero: </ion-label>
-        <ion-input [(ngModel)]="endereco.numero" type="text"></ion-input>
+        <ion-input #Numero [(ngModel)]="endereco.numero" type="text"></ion-input>
       </ion-item>
     <ion-item>  
       <ion-label stacked>Bairro: </ion-label>
@@ -21,14 +21,15 @@
     </ion-item>
     <ion-item>
       <ion-label stacked>Cidade: </ion-label>
-      <ion-input [(ngModel)]="endereco.cidade" type="text"></ion-input>
+      <ion-input [(ngModel)]="endereco.localidade" type="text"></ion-input>
     </ion-item>
     
     <ion-item>
         <ion-label stacked>UF: </ion-label>
-        <ion-select [(ngModel)]="endereco.uf">
+        <ion-input [(ngModel)]="endereco.uf" type="text"></ion-input>
+        <!-- <ion-select [(ngModel)]="endereco.uf">
           <ion-option ion-item *ngFor="let sg of siglasEstados">{{sg.sigla}}</ion-option>
-          </ion-select>
+          </ion-select> -->
       </ion-item>
 
 </ion-list>

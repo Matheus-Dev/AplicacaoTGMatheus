@@ -7,8 +7,8 @@ export class Remedio {
     tipo: string;
     dataValidade: Date;
     observacoes: string;
-    //haras: Haras;
     haras: any;
+    isValido: boolean;
 
     constructor() {
         this.nome = '';
@@ -16,7 +16,7 @@ export class Remedio {
         this.tipo = '';
         this.dataValidade = new Date();
         this.observacoes = '';
-        //this.haras = new Haras();
         this.haras = '';
+        this.isValido = true;
     }
 }

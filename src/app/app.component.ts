@@ -1,3 +1,6 @@
+import { EnderecoharasPage } from './../pages/enderecoharas/enderecoharas';
+import { RegistroPage } from './../pages/registro/registro';
+import { CadastrosHarasPage } from './../pages/cadastros-haras/cadastros-haras';
 import { Component, ViewChild } from '@angular/core';
 import { Nav, Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
@@ -18,7 +21,7 @@ import { SobrePage } from '../pages/sobre/sobre';
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = LoginPage;
+  rootPage: any = EnderecoharasPage;
 
   pages: Array<{title: string, component: any}>;
 
@@ -47,12 +50,13 @@ export class MyApp {
 
   listPages() : Array<{title: string, component: any}>{
     return [
-      { title: 'Home', component: HomePage },
       { title: 'Cadastros', component: CadastrosPage },
-      { title: 'Tarefas', component: TarefasPage },
-      { title: 'Relatorios', component: RelatoriosPage },  
-      { title: 'Sobre', component: SobrePage },
-      { title: 'Configurações', component: ConfiguracaoPage },    
+      { title: 'Serviços', component: TarefasPage },
+      { title: 'Relatórios', component: RelatoriosPage },  
+      { title: 'Configurações', component: ConfiguracaoPage },
+      { title: 'Haras', component: CadastrosHarasPage },
+      { title: 'Registro', component: RegistroPage },
+      { title: 'Endereco', component: EnderecoharasPage }
     ];
   }
 }

@@ -6,13 +6,54 @@
 -->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>cadastros/haras</ion-title>
-  </ion-navbar>
-
 </ion-header>
 
 
 <ion-content padding>
+
+  <ion-list>
+
+    <ion-item>
+      <ion-label stacked>Nome do Proprietário: </ion-label>
+      <ion-input [(ngModel)]="proprietario.nome" type="text"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>CPF: </ion-label>
+      <ion-input [(ngModel)]="proprietario.cpf" type="tel"></ion-input>
+    </ion-item>
+
+    <ion-item>
+        <ion-label stacked>Telefone: </ion-label>
+        <ion-input [(ngModel)]="proprietario.telefone" type="tel"></ion-input>
+      </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Email: </ion-label>
+      <ion-input [(ngModel)]="proprietario.email" type="email"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Nome do Haras: </ion-label>
+      <ion-input [(ngModel)]="dadosHaras.razaoSocial" type="text"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Inscrição Estadual: </ion-label>
+      <ion-input [(ngModel)]="dadosHaras.inscricaoEstadual" type="tel"></ion-input>
+    </ion-item>
+
+    <ion-grid>
+        <ion-row>
+            <ion-col col-6>
+                <button ion-button block (click)="realizarPreCadastro()">Enviar</button>
+            </ion-col>
+            <ion-col col-6>
+                <button ion-button block (click)="cancelar()">Cancelar</button>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+
+  </ion-list>
 
 </ion-content>

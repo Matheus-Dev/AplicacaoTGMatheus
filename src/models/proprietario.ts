@@ -7,11 +7,14 @@ export class Proprietario {
     telefone: string;
     endereco: Endereco;
     haras : any;
+    isAtivo: boolean;
+
     constructor(){
         this.nome = '';
         this.cpf = '';
         this.telefone = '';
         this.endereco = new Endereco();
         this.haras = '';
+        this.isAtivo = true;
     }
 }

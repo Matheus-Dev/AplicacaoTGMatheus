@@ -2,23 +2,22 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 /*
-  Generated class for the RemedioProvider provider.
+  Generated class for the ColaboradorProvider provider.
 
   See https://angular.io/guide/dependency-injection for more info on providers
   and Angular DI.
 */
 @Injectable()
-export class RemedioProvider {
+export class ColaboradorProvider {
 
-  urlApi : string = 'http://192.168.0.104:3000';
-  //urlApi: string = 'assets/dados/remedios.json';
+  urlApi : string = 'http://192.168.0.108:3000';
 
   constructor(public httpClient: HttpClient) {
-    console.log('Hello RemedioProvider Provider');
+    console.log('Hello ColaboradorProvider Provider');
   }
 
-  getRemedios(id){
-    let api = this.urlApi+'/remedio/buscar/todos/'+id;
+  getColaboradores(id){
+    let api = this.urlApi+'/colaborador/buscar/todos/'+id;
 
       return new Promise(resolve => {
         this.httpClient.get(api, {
@@ -31,8 +30,8 @@ export class RemedioProvider {
       });
   }
 
-  getRemediosValidos(id){
-    let api = this.urlApi+'/remedio/buscar/validos/'+id;
+  getColaboradoresValidos(id){
+    let api = this.urlApi+'/colaborador/buscar/ativos/'+id;
 
       return new Promise(resolve => {
         this.httpClient.get(api, {
@@ -45,8 +44,8 @@ export class RemedioProvider {
       });
   }
 
-  salvarRemedio(data){
-    let api = this.urlApi+'/remedio/adicionar';
+  salvarColaborador(data){
+    let api = this.urlApi+'/colaborador/adicionar';
 
     return new Promise((resolve, reject) => {
       this.httpClient.post(api, JSON.stringify(data), {
@@ -60,8 +59,8 @@ export class RemedioProvider {
     });
   }
 
-  atualizarRemedio(data){
-    let api = this.urlApi+'/remedio/atualizar/'+data._id;
+  atualizarColaborador(data){
+    let api = this.urlApi+'/colaborador/atualizar/'+data._id;
 
     return new Promise((resolve, reject) => {
       this.httpClient.put(api, JSON.stringify(data), {
@@ -75,8 +74,8 @@ export class RemedioProvider {
     });
   }
 
-  deletarRemedio(data){
-    let api = this.urlApi+'/remedio/excluir/'+data._id;
+  deletarColaborador(data){
+    let api = this.urlApi+'/colaborador/excluir/'+data._id;
 
     return new Promise((resolve, reject) => {
       this.httpClient.delete(api, {
@@ -89,5 +88,4 @@ export class RemedioProvider {
         });
     });
   }
-
 }

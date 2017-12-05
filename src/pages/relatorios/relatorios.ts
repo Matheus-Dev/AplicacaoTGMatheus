@@ -1,3 +1,5 @@
+import { DocumentViewer, DocumentViewerOptions } from '@ionic-native/document-viewer';
+import { AtividadesProvider } from './../../providers/atividades/atividades';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
@@ -15,12 +17,16 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class RelatoriosPage {
 
-  filtrosRelatorio: {tipo: string, inicio:Date, termino:Date};
+  filtrosRelatorio: {tipo: string, nome: string, inicio:string, termino:string};
+  dataFiltro: {inicio: Date, termino: Date};
+  tiposRelatorio = ['ANIMAL','COLABORADOR','PROPRIETARIO'];
+  options: DocumentViewerOptions = {
+    title: 'My PDF'
+  }
 
-  filtros: Array<string>;
-
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-    this.inicializarFiltros();
+  constructor(public navCtrl: NavController, public navParams: NavParams,
+              public http: AtividadesProvider, private document: DocumentViewer) {
+        this.inicializarFiltros();
   }
 
   ionViewDidLoad() {
@@ -30,16 +36,30 @@ export class RelatoriosPage {
   inicializarFiltros(){
     this.filtrosRelatorio = {
       tipo: '',
+      nome: '',
+      inicio: '',
+      termino: ''
+    }
+
+    this.dataFiltro = {
       inicio: new Date(),
       termino: new Date()
     }
-    this.filtros = [
-      'ANIMAL','COLABORADOR','PROPRIETARIO'
-    ]
   }
 
-  mostrarData(){
-    alert(this.filtrosRelatorio.inicio);
+  gerarRelatorio(){
+
+    let stringDataInicio = this.dataFiltro.inicio.toString();
+    let stringDataTermino = this.dataFiltro.termino.toString();
+
+    this.filtrosRelatorio.inicio = stringDataInicio+'T22:00:00.000+0200';
+    this.filtrosRelatorio.termino = stringDataTermino+'T21:59:59.000+0200';
+
+    alert(this.filtrosRelatorio);
+
+    //alert('Data de Inicio'+new Date(stringDataInicio));
+    //alert('Data de Termino'+new Date(stringDataTermino));
+    //this.http.getRelatorioAnimal();
   }
 
 }
