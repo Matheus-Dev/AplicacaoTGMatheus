@@ -56,7 +56,7 @@ export class LoginPage {
     this.loginProvider.realizarLogin(this.colaboradorLogado)
     .then(data => {
       dados = data;
-      alert("Aviso: "+dados.message);
+      //alert("Aviso: "+dados.message);
       if(dados.status == 200){
         this.navCtrl.setRoot(HomePage, {
           colaboradorLogado : dados.data
